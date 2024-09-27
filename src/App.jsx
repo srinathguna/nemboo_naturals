@@ -36,18 +36,19 @@ function App() {
   const handleClick = (item, id) => {
     // const x = cartlist ? cartlist.filter((e)=>e.id === item.id) : ""
     const x = cartlist.filter(e => e.id === item.id)
-    if (x.length === 0) {
-      setCartList([...cartlist, item]);
-      const total = cartlist.reduce((acc, cval) => acc + cval.price, item.price);
-      setTotal(total.toFixed(2));
-    } 
+    // if (x.length === 0) {
+    setCartList([...cartlist, item]);
+    const total = cartlist.reduce((acc, cval) => acc + cval.price, item.price);
+    setTotal(total.toFixed(2));
+    // } 
   };
 
   const removeCart = (id) => {
     const remove = cartlist.filter((item) => item.id !== id)
-    setCartList(remove)
-    // setCount((pval) => pval - 1);
-    //console.log(item) 
+    setCartList(remove);
+    const newTotal = remove.reduce((acc, item) => acc + item.price,0);
+    setTotal(newTotal.toFixed(2));
+    // console.log(setTotal);
   }
 
 // console.log(cartlist)

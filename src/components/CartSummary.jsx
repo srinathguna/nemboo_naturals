@@ -20,7 +20,7 @@ const CartSummary = ({ total, cardlist,removeCart }) => {
               </div>
               <div className="w-full flex justify-end">
                 <span className="font-bold">{item.price}</span>
-                <i className="ml-4" onClick={() => removeCart(item.id)}>
+                <i className="ml-4 cursor-pointer" onClick={() => removeCart(item.id)}>
                   X
                 </i>
               </div>

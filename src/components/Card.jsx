@@ -11,15 +11,17 @@ const Card = ({ item, index, status, setStatus, setCount, handleClick }) => {
             alt="classic"
           />
           <h1 className="mt-2 text-sm font-medium">{item.title}</h1>
-          <h2 className="mt-2 text-xl font-bold text-[#ff5050]">
+          <h2 className="mt-2 text-xl font-bold text-[#416A34]">
             ${item.price}
           </h2>
           <button
-            className={`mt-4 w-full text-white rounded py-3 ${status ? "bg-slate-700" : "bg-slate-900"}`}
-            onClick={()=>handleClick(item)}
+            className={`mt-4 w-full text-white rounded py-3 ${
+              status ? "bg-[#000]" : "bg-[#B78744]"
+            }`}
+            onClick={() => handleClick(item)}
           >
-           {status ?  "Remove from Cart":"Add to Cart"}
-          </button>          
+            {status ? "Remove from Cart" : "Add to Cart"}
+          </button>
         </div>
       </div>
     </>
