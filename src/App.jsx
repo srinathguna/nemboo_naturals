@@ -13,7 +13,7 @@ import Loading from "./assets/loader.gif";
 function App() {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState([]);
-    const [filteredData, setFilteredData] = useState([]);
+  const [filteredData, setFilteredData] = useState([]);
   const [count, setCount] = useState(0);
   const [popup, setPopup] = useState(false);
   // const [status, setStatus] = useState(true);
@@ -41,12 +41,12 @@ function App() {
 
     const handleSearch = (query) => {
       if (query.trim() === "") {
-        setFilteredData(data); // Reset to all products if search is empty
+        setFilteredData(data); 
       } else {
         const filtered = data.filter((item) =>
           item.title.toLowerCase().includes(query.toLowerCase())
         );
-        setFilteredData(filtered); // Update the filtered data
+        setFilteredData(filtered);
       }
   };
   
@@ -88,7 +88,6 @@ function App() {
     } else {
       document.removeEventListener("mousedown", handleClickOutside);
     }
-
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
@@ -131,7 +130,9 @@ function App() {
             ></Route>
             <Route
               path="/shoppingcart"
-              element={<ShoppingCart cartlist={cartlist} />}
+              element={
+                <ShoppingCart cartlist={cartlist} removeCart={removeCart} />
+              }
             ></Route>
           </Routes>
         )}
