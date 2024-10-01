@@ -15,7 +15,6 @@ function App() {
   const [filteredData, setFilteredData] = useState([]);
   const [count, setCount] = useState(0);
   const [popup, setPopup] = useState(false);
-  // const [status, setStatus] = useState(true);
   const [cartlist, setCartList] = useState([]);
   const [total, setTotal] = useState();
   const popupRef = useRef(null);
@@ -93,6 +92,7 @@ function App() {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [popup]);
+  
   return (
     <div className="container mx-auto relative">
       <Header
@@ -126,7 +126,7 @@ function App() {
             <Route
               path="/product/:id"
               element={
-                <ProductDetails data={data} handleClicked={handleClick} />
+                <ProductDetails data={data} handleClicked={handleClick} cartlist={cartlist} />
               }
             ></Route>
             <Route
