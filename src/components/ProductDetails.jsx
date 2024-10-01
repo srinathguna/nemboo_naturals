@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Loader from "./../assets/loader.gif"
 
 const ProductDetails = ({ handleClicked, status, setStatus }) => {
   const { id } = useParams();       
@@ -18,7 +19,11 @@ const ProductDetails = ({ handleClicked, status, setStatus }) => {
   };
 
   if (!productData) {
-    return <h2>Loading...</h2>;
+      return (
+        <div className="flex justify-center">
+          <img src={Loader} alt="Loading..." />
+        </div>
+      );
   }
 
   const handleClick = () => {
