@@ -7,35 +7,37 @@ const CartSummary = ({ total, cardlist, removeCart, count, handlePopup }) => {
       <h2 className="text-md font-bold mb-2 uppercase border-b-2 border-spacing-1 pb-1">
         Cart Summary ({cardlist.length})
       </h2>
-      {cardlist.length > 0 ? (
-        <>
-          {cardlist.map((item, index) => {
-            return (
-              <div key={index} className="flex border-b-2 py-2">
-                <div className="flex items-center w-8/12">
-                  <img
-                    className="h-10 w-12 object-contain"
-                    src={item.image}
-                    alt={item.title}
-                  />
-                  <h1 className="ml-2 text-sm w-8/12">{item.title}</h1>
+      <div className="overflow-auto max-h-56">
+        {cardlist.length > 0 ? (
+          <>
+            {cardlist.map((item, index) => {
+              return (
+                <div key={index} className="flex border-b-2 py-2">
+                  <div className="flex items-center w-8/12">
+                    <img
+                      className="h-10 w-12 object-contain"
+                      src={item.image}
+                      alt={item.title}
+                    />
+                    <h1 className="ml-2 text-sm w-8/12">{item.title}</h1>
+                  </div>
+                  <div className="w-4/12 flex justify-end items-center">
+                    <span className="font-bold mr-4">${item.price}</span>
+                    <i
+                      className="cursor-pointer text-red-500 not-italic font-bold text-sm"
+                      onClick={() => removeCart(item.id)}
+                    >
+                      X
+                    </i>
+                  </div>
                 </div>
-                <div className="w-4/12 flex justify-end items-center">
-                  <span className="font-bold mr-4">${item.price}</span>
-                  <i
-                    className="cursor-pointer text-red-500 not-italic font-bold text-sm"
-                    onClick={() => removeCart(item.id)}
-                  >
-                    X
-                  </i>
-                </div>
-              </div>
-            );
-          })}
-        </>
-      ) : (
-        <p className="text-center font-bold my-4">Your cart is empty</p>
-      )}
+              );
+            })}
+          </>
+        ) : (
+          <p className="text-center font-bold my-4">Your cart is empty</p>
+        )}
+      </div>
       {cardlist.length > 0 && (
         <>
           <div className="flex justify-between items-center mt-4">

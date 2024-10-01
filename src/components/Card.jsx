@@ -4,8 +4,7 @@ import { NavLink } from "react-router-dom";
 const Card = ({ item, index, status, handleClick }) => {
   return (
     <>
-      <div
-        className="p-2 w-full sm:w-1/2 md:w-1/4 lg:w-1/4 cursor-pointer"
+      <div className="p-2 w-full sm:w-1/2 md:w-1/4 lg:w-1/4 cursor-pointer"
         key={index}
       >
         <div className="card p-4 rounded overflow-hidden shadow-lg bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">

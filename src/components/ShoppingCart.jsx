@@ -9,7 +9,6 @@ const ShoppingCart = ({ cartlist, removeCart }) => {
           ? "Your NEMBOONATURALS Cart is empty."
           : "Shopping Cart"}
       </h1>
-
       {cartlist.length > 0 && (
         <div className="mt-8 space-y-6">
           {cartlist.map((item, id) => (
@@ -21,7 +20,7 @@ const ShoppingCart = ({ cartlist, removeCart }) => {
               <NavLink to={`/product/${item.id}`} className="flex items-start">
                 <div className="w-full sm:w-2/12 mb-4 sm:mb-0">
                   <img
-                    className="w-full h-42 object-contain rounded"
+                    className="w-full h-32 object-contain rounded"
                     src={item.image}
                     alt={item.title}
                   />
