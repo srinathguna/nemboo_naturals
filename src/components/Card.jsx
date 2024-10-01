@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const Card = ({ item, index, status, setStatus, setCount, handleClick }) => {
+const Card = ({ item, index, status, handleClick }) => {
   return (
     <>
       <div

@@ -4,7 +4,6 @@ import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import ProductList from "./components/ProductList";
 import CartSummary from "./components/CartSummary";
-import { TbLoader3 } from "react-icons/tb";
 import ProductDetails from "./components/ProductDetails";
 import ShoppingCart from "./components/ShoppingCart";
 import Loading from "./assets/loader.gif";
@@ -64,6 +63,8 @@ function App() {
         item.price
       );
       setTotal(total.toFixed(2));
+    } else {
+        removeCart(item.id);
     }
   };
 

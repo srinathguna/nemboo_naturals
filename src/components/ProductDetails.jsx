@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 const ProductDetails = ({ handleClicked, status, setStatus }) => {
-  const { id } = useParams();
+  const { id } = useParams();       
   const [productData, setProductData] = useState(null);
 
   useEffect(() => {
