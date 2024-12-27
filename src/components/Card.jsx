@@ -22,7 +22,7 @@ const Card = ({ item, index, status, handleClick }) => {
             ${item.price}
           </h2>
           <button
-            className={`mt-4 w-full text-white rounded-full py-3 ${
+            className={`mt-4 block w-7/12 mx-auto text-white rounded-lg py-2 font-normal text-sm ${
               status ? "bg-black" : "bg-[#B78744]"
             } hover:opacity-90 transition-opacity duration-200`}
             onClick={() => handleClick(item)}
